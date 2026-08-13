@@ -6,8 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { width, height } = Dimensions.get('window');
 
-// IP Address laptop di jaringan Hotspot HP
-const API_URL = 'http://10.84.239.170:8000/api'; 
+import { API_URL } from '../config'; 
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');

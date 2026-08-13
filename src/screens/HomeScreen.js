@@ -4,8 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
-const { width } = Dimensions.get('window');
-const API_URL = 'http://10.0.2.2:8000/api';
+import { API_URL } from '../config';
 
 export default function HomeScreen({ navigation }) {
   const [user, setUser] = useState(null);
