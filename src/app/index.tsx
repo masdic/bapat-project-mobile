@@ -11,6 +11,7 @@ import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { useFonts, Nunito_800ExtraBold } from '@expo-google-fonts/nunito';
+import * as SplashScreen from 'expo-splash-screen';
 
 const API_URL = Platform.OS === 'web'
   ? 'http://127.0.0.1:8000/api'
@@ -29,6 +30,12 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  React.useEffect(() => {
+    if (fontsLoaded) {
+      SplashScreen.hideAsync().catch(() => {});
+    }
+  }, [fontsLoaded]);
 
   if (!fontsLoaded) {
     return null; // Tunggu font selesai diload
