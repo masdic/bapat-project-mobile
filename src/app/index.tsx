@@ -190,7 +190,7 @@ export default function LoginScreen() {
             {/* Link Daftar */}
             <View style={styles.registerRow}>
               <Text style={styles.registerText}>Belum punya akun? </Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => router.push('/register')}>
                 <Text style={styles.registerLink}>Daftar</Text>
               </TouchableOpacity>
             </View>
